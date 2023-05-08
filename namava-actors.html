@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>namava</title>
+    <style>
+        body {
+            background: #131212;
+        }
+        ul,li {
+            list-style: none;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color:#fff;
+        }
+        ul li img {
+            border-radius: 50%;
+        }
+        #first ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        #second ul {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div id="first"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="second"></div>
+
+    <script>
+        var list = [
+            {
+                firstName : "الناز" ,
+                lastName :"شاکردوست",
+                imageUrl : "https://static.namava.ir/Content/Upload/Images/ae7187d0-6d7b-4af3-8580-7f2eb4e87b20.jpg?anchor=middlecenter&crop=auto&scale=both&w=140&h=140"  ,
+                url : "https://www.namava.ir/person-5902-%D8%A7%D9%84%D9%86%D8%A7%D8%B2_%D8%B4%D8%A7%DA%A9%D8%B1%D8%AF%D9%88%D8%B3%D8%AA",
+            },
+            {
+                firstName : "پارسا",
+                lastName : "پیروزفر",
+                imageUrl : "https://static.namava.ir/Content/Upload/Images/2f55d863-fb50-43ec-b814-e4b6270f5feb.jpg?anchor=middlecenter&crop=auto&scale=both&w=140&h=140",
+                url : "https://www.namava.ir/person-6029-%D9%BE%D8%A7%D8%B1%D8%B3%D8%A7_%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%D9%81%D8%B1",
+            },
+            {
+                firstName : "هوتن ",
+                lastName : " شکیبا",
+                imageUrl : "https://static.namava.ir/Content/Upload/Images/53b597ce-0148-49f6-8184-7a68c0775bff.jpg?anchor=middlecenter&crop=auto&scale=both&w=140&h=140" ,
+                url : "https://www.namava.ir/person-7657-%D9%87%D9%88%D8%AA%D9%86_%D8%B4%DA%A9%DB%8C%D8%A8%D8%A7",
+            },
+            {
+                firstName : "رضا ",
+                lastName : "عموزاد",
+                imageUrl :  "https://static.namava.ir/Content/Upload/Images/cb2ff837-1cab-4e74-a91b-57830d33514a.jpg?anchor=middlecenter&crop=auto&scale=both&w=140&h=140",
+                url : "https://www.namava.ir/person-200434-%D8%B1%D8%B6%D8%A7_%D8%B9%D9%85%D9%88%D8%B2%D8%A7%D8%AF",
+            },
+            {
+                firstName : "سودابه " ,
+                lastName : "جعفرزاد ",
+                imageUrl :  "https://static.namava.ir/Content/Upload/Images/64627875-e90d-4244-8867-de6d238f42c0.jpg?anchor=middlecenter&crop=auto&scale=both&w=140&h=140",
+                url : "https://www.namava.ir/person-200435-%D8%B3%D9%88%D8%AF%D8%A7%D8%A8%D9%87_%D8%AC%D8%B9%D9%81%D8%B1%D8%B2%D8%A7%D8%AF" ,
+            },
+            {
+                firstName : "مهدی ",
+                lastName : " فریضه",
+                imageUrl : "https://static.namava.ir/Content/Upload/Images/592292c3-36c3-4dcc-b608-8fbde3731c14.jpg?anchor=middlecenter&crop=auto&scale=both&w=140&h=140", 
+                url : "https://www.namava.ir/person-8717-%D9%85%D9%87%D8%AF%DB%8C_%D9%81%D8%B1%DB%8C%D8%B6%D9%87",
+            },
+            {
+                firstName : " امیر",
+                lastName : " حامد",
+                imageUrl :  "https://static.namava.ir/Content/Upload/Images/aa3c00ea-bf09-4137-80a9-0a71bd876738.jpg?anchor=middlecenter&crop=auto&scale=both&w=140&h=140",
+                url : "https://www.namava.ir/person-200436-%D8%A7%D9%85%DB%8C%D8%B1_%D8%AD%D8%A7%D9%85%D8%AF",
+            },
+        ]
+        
+        var actors = document.createElement("ul");
+        var first = document.getElementById("first");
+        first.appendChild(actors);
+            for ( var i = 0; i < list.length; i++) {
+                creatList(i)
+            }
+            function creatList(i) {
+                var eachActor = document.createElement("li");
+                actors.appendChild(eachActor);
+                var link = document.createElement("a");
+                link.href = list[i].url;
+                eachActor.appendChild(link)
+                var image = document.createElement("img");
+                image.src = list[i].imageUrl;
+                link.appendChild(image);
+                var name = document.createElement("h3");
+                name.innerHTML = list[i].firstName + list[i].lastName;
+                link.appendChild(name);   
+            }
+
+
+        var secondList = "<ul>"
+            for ( var i = 0; i < list.length; i++){
+                secondList += "<li>" + "<a href="+ list[i].url +">" + "<img src="+list[i].imageUrl+" />" + "<h3> "+ list[i].firstName +" "+ list[i].lastName + " </h3>" + "</a>" + "</li>"
+            }
+            secondList += "</ul>"
+            document.getElementById("second").innerHTML = secondList
+
+    </script>
+</body>
+</html>
